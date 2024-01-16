@@ -1,0 +1,115 @@
+package-ock.son is very important file
+1. It locks the version 
+2. Never put it in .gitignore
+
+# We never push node modules to github ,thats why we keep it inside gitignore because its too heavy ,but the question arises that if somebody want to use my code then how he will download nodemodules??
+Ans: He will use package-lock.json that is present on the github and install all node module dependencies
+
+
+#Hot Module Reloading (Parcel will track each library and if there is any changes in any file parcel will automatically shows it when you save it)
+Parcel uses fileWatcher algorithm (it is wrriten in C++)
+Parcel does Bundeling
+Parcel Does Minification
+Parcel cleans our code
+It is super fast algorithm
+Image Optimization
+Caching while Develoment 
+It does Compressions also
+TreeShaking => removing unwanted code
+campatible with older version of browsers
+Its gives https on dev machine
+We should put parcel-cache in gitignore
+anything we can genrate on server can be put inside .gitignore file
+parcel uses consitent hashing algorithm ,to do caching 
+React does not do minification ,parcel does that minification or you can say bundlers
+
+
+
+#browserlist make our app compatible with lots of browser
+
+#babel is javaScript package (Think it like balck box)
+
+#bable-plugin-transform-remove to remove console.log
+
+#when we have multiple siblings then i have to give keys(that uniqly identifies) to my each siblings
+#JSX uses react.createElement behind the Scene (babel converts the JSX code into React.createElement)
+# babel comes along with parcel
+#Jsx make sure from Xss attack
+
+#evey component in react maintain some state
+# when our state varaible changes then react re-render whole component  (what it does in re rendering ,it delete the component and create again from scracth ,although this process is very fast)
+
+
+# Akshays word
+--Realisation
+--Dont go into ComfortZone 
+--start making plan
+---Side Hustle of learning - Every day fight for it(No break)
+---Realise it will take time
+---Hardwork and Hustle and Focus
+--- start searching for Job and keep failing
+
+#Reconcilliation is the heart of react
+
+#good way to call apis
+loads==> renderpage ==> api call ==>update UI (it is best way)
+
+#never Create component inside Component (We can compose component)
+
+#never write useState inside if ,for loop and never create it outside funtional Component
+
+#can I use more than one useEffect       (yes we can create)
+
+# There are two type of routing (client side routing and server side routing)
+
+
+----------------------------------------------------------------------------
+# We can not create ClassBased Component without render() method
+#when we change page then use effect return funtion will call ,(this process is known as unmounted)
+#React life cycle Constructor calling => rendering => componentDidAmount
+---------------------------------------------------------------------------------
+Topic ==> Optimization of React app
+
+Question  ==> How to create custom Hook??
+Question ==> What is lazy loading/chunking/codeSplitting/Dynamic Bundeling/ ??
+
+
+modularity: it means break our code into meaningful module
+
+where ever we have imports for Instamart there we have to lazy load
+
+#----------------------------------------------------------------------
+ways to style html
+1.Normal Native CSS
+2.SCSS
+3.inline CSS
+4.Component Liabraries -- MUI,ANT,Base UI,Chakra UI
+5.Styled Component
+6.Tailwind CSS FrameWork
+
+
+
+
+
+
+
+
+
+
+
+
+
+#--------------------------------------------------
+1.Handling data is most crucial part in webapp
+2.UI layer and Data Layer
+- if we have to pass data from one component to another component then  we use props and  its kind of local state of our parent 
+- state is local react varaible  (its not common variable like javaScript ,its different only react can track it )
+-Lets Uderstand (suppose we have to send Data from  AppLayOut to Resturant Card)
+    - AppLayOut
+       it has user state
+         -Body is child Component Of AppLayOut (user is passed to body)
+            Resturant Card is Child Of Body (user is passed from body to Resturant card)
+
+ The above scenario is known as Props Drilling
+
+ 
