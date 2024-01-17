@@ -66,7 +66,7 @@ loads==> renderpage ==> api call ==>update UI (it is best way)
 ----------------------------------------------------------------------------
 # We can not create ClassBased Component without render() method
 #when we change page then use effect return funtion will call ,(this process is known as unmounted)
-#React life cycle Constructor calling => rendering => componentDidAmount
+#React life cycle --> [Constructor calling => rendering => componentDidAmount]
 ---------------------------------------------------------------------------------
 Topic ==> Optimization of React app
 
@@ -76,10 +76,10 @@ Question ==> What is lazy loading/chunking/codeSplitting/Dynamic Bundeling/ ??
 
 modularity: it means break our code into meaningful module
 
-where ever we have imports for Instamart there we have to lazy load
+where ever we have imports for Instamart there we have to do lazy load
 
 #----------------------------------------------------------------------
-ways to style html
+ways to style html (also go through the pros and cons of each styling)
 1.Normal Native CSS
 2.SCSS
 3.inline CSS
@@ -103,13 +103,32 @@ ways to style html
 1.Handling data is most crucial part in webapp
 2.UI layer and Data Layer
 - if we have to pass data from one component to another component then  we use props and  its kind of local state of our parent 
-- state is local react varaible  (its not common variable like javaScript ,its different only react can track it )
+- state is local react varaible  (its not common variable like javaScript ,its different ,only react can track it )
 -Lets Uderstand (suppose we have to send Data from  AppLayOut to Resturant Card)
     - AppLayOut
-       it has user state
-         -Body is child Component Of AppLayOut (user is passed to body)
-            Resturant Card is Child Of Body (user is passed from body to Resturant card)
+       it has [user] state
+         -Body is child Component Of AppLayOut ([user ]is passed to body)
+            Resturant Card is Child Of Body ([user] is passed from body to Resturant card)
 
- The above scenario is known as Props Drilling
+ The above scenario is known as [Props Drilling]
+
+ -We can not modify state of one Sibling componet from another Sibling Componet Directly 
+ -We can Play smart game (We can maintain the state in the parent of Siblings) intead of mainting state by each component 
+
+ 
+ The above two line introduces new Concept that is called [state lifting/ state up lifting]
+
+ -React dev tool Profiler will watch what we will be doing on our website and record it
+ -suppose we have a useCase that our data are require by all the components or you can say more than 50% component require that data ,then instead of doing props drilling we have to store our data into a central place ,from where all the componets that require data can easily get it.
+ 
+
+ so for the above use case we use in react useContext() hook (another alternative is reduxStore but genraaly we use it for complex case)
+
+ -updating localStorage is heavy operation /costly operation
+ -createContext() is a funtion which takes arguments as data which we need anywhere in our webapp 
+ - We can create more than one context
+ - context are not tied to Componet ,where are state and props are tied to Component
+ - In class Based Component we used it as Component (etc <UserContext.Consumer></UserContext.Consumer>)
+ - you can  modify our context using provider (userContext.Provider)
 
  
