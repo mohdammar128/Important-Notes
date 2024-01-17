@@ -170,5 +170,11 @@ ex- store(slices)==> selector(use to read the data)==>update Ui according to tha
    -Selector is a hook at the end of day and hook is function at the end of day 
    - when we use Selector this is known as Subscribe 
 
+@reduxjs/Toolkit ==> this library is for store management (basically its deals with redux only)
+react-redux ==> this library bridge react and redux to gether (so that we can use redux store with react)
 
+Read about redux thunk
+Read about RTk query
+
+redux dev tools (it will help developer )
  
