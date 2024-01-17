@@ -122,13 +122,53 @@ ways to style html (also go through the pros and cons of each styling)
  -suppose we have a useCase that our data are require by all the components or you can say more than 50% component require that data ,then instead of doing props drilling we have to store our data into a central place ,from where all the componets that require data can easily get it.
  
 
- so for the above use case we use in react useContext() hook (another alternative is reduxStore but genraaly we use it for complex case)
+ so for the above use case we use in react useContext() hook (another alternative is reduxStore but generaly we use it for complex case)
 
  -updating localStorage is heavy operation /costly operation
  -createContext() is a funtion which takes arguments as data which we need anywhere in our webapp 
  - We can create more than one context
- - context are not tied to Componet ,where are state and props are tied to Component
+ - context are not tied to Component ,where are state and props are tied to Component
  - In class Based Component we used it as Component (etc <UserContext.Consumer></UserContext.Consumer>)
  - you can  modify our context using provider (userContext.Provider)
+
+ ------------------------------------------React Redux--------------------------------------------------------------------------
+ - Redux is used to handle data (why do we use it ,to avoid props drilling)
+ - when our Application grows then Redux comes into picture
+ - for small project dont use redux
+ - use redux-Toolkit (dont use redux because its painful)
+ - At end of day redux store is big Object
+
+Redux Store(it can be access from any where)
+  -KeyWords
+    -store
+    -dispatch
+    -action
+    -reducer
+    -selector
+    -subscribe
+ ---------------------
+|                     |
+|   cartSlice         |
+|---------------------|
+| ---------------------
+|                     |
+|     userSlice       |
+|---------------------|                     
+|                     |
+|      someMoreSlice  |
+|                     |
+|                     |
+|---------------------|
+
+- We devide our store into slices ,if we want to change data into our store then we can not directly change the data ,we have 
+to dispatch an action
+ex- (action )addItem==> call a funtcion (reducer) ==>this function(reducer) will modify our cart and Update our slice of store("addItem" will call a function and this function will modify our cart)
+
+
+-if we want to read from store then we use  "selector" in redux
+ex- store(slices)==> selector(use to read the data)==>update Ui according to that
+   -Selector is a hook at the end of day and hook is function at the end of day 
+   - when we use Selector this is known as Subscribe 
+
 
  
